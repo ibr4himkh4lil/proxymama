@@ -46,6 +46,15 @@
         .speed { color: var(--yellow); font-size: 10px; }
         .source-badge { color: var(--orange); font-size: 9px; margin-left: 5px; }
         footer { padding: 10px; text-align: center; font-size: 11px; opacity: 0.7; }
+        .github-link {
+            color: var(--glow);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--glow);
+        }
+        .github-link:hover {
+            color: #fff;
+            border-bottom: 1px solid var(--glow);
+        }
         @media (max-width: 600px) { 
             .stats { grid-template-columns: 1fr 1fr; } 
             .terminal-box { height: 35vh; } 
@@ -105,7 +114,9 @@
     </div>
 </div>
 
-<footer>ProxyMama © <strong>Humayun Shariar Himu</strong> | 🕷️ Scrapes 8+ Proxy Websites | ⚡ Real TCP Testing</footer>
+<footer>
+    <a href="https://github.com/ibr4himkh4lil" target="_blank" class="github-link">ibrahimkhalil</a> © <strong>ProxyMama</strong> | 🕷️ Scrapes 8+ Proxy Websites | ⚡ Real TCP Testing
+</footer>
 
 <script>
     const terminal = document.getElementById('terminal');
