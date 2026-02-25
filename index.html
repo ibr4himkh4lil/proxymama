@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Proxy - Multi-Source Proxy Scraper</title>
+    <title>LiveProxy - Multi-Source Proxy Scraper</title>
     <style>
         :root {
             --glow: #00ff41; --bg: #050505; --terminal: rgba(0, 0, 0, 0.95);
@@ -112,7 +112,7 @@
 
 <div class="container">
     <header>
-        <h2 style="margin: 0; letter-spacing: 2px;">Real Proxy</h2>
+        <h2 style="margin: 0; letter-spacing: 2px;">LiveProxy</h2>
         <small id="clock">SYSTEM TIME: --:--:--</small>
         <small style="display: block; color: var(--orange);" id="sourceCountDisplay">🕷️ MULTI-SOURCE PROXY SCRAPER</small>
     </header>
@@ -198,7 +198,7 @@
 </div>
 
 <footer>
-    <a href="https://github.com/ibr4himkh4lil" target="_blank" class="github-link">ibrahimkhalil</a> © <strong>Real Proxy</strong> | 🕷️ Scrapes 28+ Proxy Websites | ⚡ Real TCP Testing
+    <a href="https://github.com/ibr4himkh4lil" target="_blank" class="github-link">ibrahimkhalil</a> © <strong>LiveProxy</strong> | 🕷️ Scrapes 28+ Proxy Websites | ⚡ Real TCP Testing
 </footer>
 
 <script>
@@ -208,7 +208,6 @@
     const totalCountTxt = document.getElementById('total-count');
     const sourcesCountTxt = document.getElementById('sources-count');
     const timerTxt = document.getElementById('timer');
-    const totalSourcesSpan = document.getElementById('totalSourcesCount');
     
     let scrapedProxies = [];
     let liveProxies = [];
@@ -349,7 +348,7 @@
     }, 1000);
 
     window.onload = () => {
-        log('Real Proxy v3.0 - 28+ Sources Ready', 'success');
+        log('LiveProxy v3.0 - 28+ Sources Ready', 'success');
     };
 </script>
 </body>
