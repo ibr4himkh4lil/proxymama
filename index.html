@@ -42,14 +42,23 @@
             font-size: 12px;
         }
         select {
-            min-width: 140px;
+            min-width: 160px;
+            max-width: 200px;
+        }
+        select option {
+            background: #000;
+            color: var(--glow);
+            padding: 5px;
+        }
+        select option:hover {
+            background: var(--glow);
+            color: #000;
         }
         input[type="number"] {
             width: 70px;
             text-align: center;
             background: rgba(0,0,0,0.5);
         }
-        select option { background: #000; color: var(--glow); }
         button:hover { background: var(--glow); color: #000; }
         .spacer {
             flex: 1;
@@ -94,6 +103,7 @@
             }
             select {
                 flex: 1;
+                max-width: 100%;
             }
         }
     </style>
@@ -110,30 +120,53 @@
     <div class="filter-bar">
         <div class="filter-group">
             <label>SCRAPE:</label>
-            <select id="sourceSelect">
-                <option value="all">ALL SOURCES (<span id="totalSourcesCount">28</span>)</option>
-                <option value="SSL Proxies">SSL Proxies</option>
-                <option value="Free Proxy List">Free Proxy List</option>
-                <option value="US Proxies">US Proxies</option>
-                <option value="ProxyNova">ProxyNova</option>
-                <option value="HideMyName">HideMyName</option>
-                <option value="HideSter">HideSter</option>
-                <option value="VPNBook">VPNBook</option>
-                <option value="Whoer">Whoer</option>
-                <option value="ProxyScrape">ProxyScrape</option>
+            <select id="sourceSelect" size="1">
+                <option value="all">🌐 ALL SOURCES (28)</option>
+                <option value="SSL Proxies">🔵 SSL Proxies (sslproxies.org)</option>
+                <option value="Free Proxy List">🟢 Free Proxy List (free-proxy-list.net)</option>
+                <option value="US Proxies">🔴 US Proxies (us-proxy.org)</option>
+                <option value="ProxyNova">🟠 ProxyNova (proxynova.com)</option>
+                <option value="HideMyName">🟡 HideMyName (hidemy.name)</option>
+                <option value="HideSter">🟣 HideSter (hidester.com)</option>
+                <option value="VPNBook">🔵 VPNBook (vpnbook.com)</option>
+                <option value="Whoer">🟢 Whoer (whoer.net)</option>
+                <option value="ProxyScrape">🔴 ProxyScrape (proxyscrape.com)</option>
+                <option value="ProxySite">🟠 ProxySite (proxysite.com)</option>
+                <option value="CroxyProxy">🟡 CroxyProxy (croxyproxy.com)</option>
+                <option value="BlockAway">🟣 BlockAway (blockaway.net)</option>
+                <option value="Hide.me">🔵 Hide.me (hide.me)</option>
+                <option value="KProxy">🟢 KProxy (kproxy.com)</option>
+                <option value="4EverProxy">🔴 4EverProxy (4everproxy.com)</option>
+                <option value="MegaProxy">🟠 MegaProxy (megaproxy.com)</option>
+                <option value="Zend2">🟡 Zend2 (zend2.com)</option>
+                <option value="FilterBypass">🟣 FilterBypass (filterbypass.me)</option>
+                <option value="GenMirror">🔵 GenMirror (genmirror.com)</option>
+                <option value="AtoZProxy">🟢 AtoZProxy (atozproxy.com)</option>
+                <option value="SiteEnable">🔴 SiteEnable (sitenable.com)</option>
+                <option value="Proxify">🟠 Proxify (proxify.com)</option>
+                <option value="Anonymouse">🟡 Anonymouse (anonymouse.org)</option>
+                <option value="WebProxy">🟣 WebProxy (webproxy.net)</option>
+                <option value="Proxyium">🔵 Proxyium (proxyium.com)</option>
+                <option value="Geonode">🟢 Geonode (geonode.com)</option>
+                <option value="ProxyList">🔴 ProxyList (proxy-list.download)</option>
+                <option value="HideIP">🟠 HideIP (hideip.me)</option>
             </select>
         </div>
         
         <div class="filter-group">
             <label>COUNTRY:</label>
             <select id="countrySelect">
-                <option value="all">ALL</option>
-                <option value="US">USA</option>
-                <option value="GB">UK</option>
-                <option value="CA">CANADA</option>
-                <option value="BD">BANGLADESH</option>
-                <option value="IN">INDIA</option>
-                <option value="DE">GERMANY</option>
+                <option value="all">🌍 ALL</option>
+                <option value="US">🇺🇸 USA</option>
+                <option value="GB">🇬🇧 UK</option>
+                <option value="CA">🇨🇦 CANADA</option>
+                <option value="BD">🇧🇩 BANGLADESH</option>
+                <option value="IN">🇮🇳 INDIA</option>
+                <option value="DE">🇩🇪 GERMANY</option>
+                <option value="FR">🇫🇷 FRANCE</option>
+                <option value="JP">🇯🇵 JAPAN</option>
+                <option value="KR">🇰🇷 SOUTH KOREA</option>
+                <option value="SG">🇸🇬 SINGAPORE</option>
             </select>
         </div>
         
@@ -213,11 +246,6 @@
                 scrapedProxies = data.proxies;
                 totalCountTxt.innerText = data.total;
                 sourcesCountTxt.innerText = data.sources.length;
-                
-                // Update source count display
-                if (totalSourcesSpan) {
-                    totalSourcesSpan.innerText = data.sources.length;
-                }
                 
                 log(`<span style="color:var(--glow)">✓ Scraped ${data.total} proxies from ${data.sources.length} sources</span>`, 'success');
                 
